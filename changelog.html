@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surnia - история версий</title>
+<meta name="description" content="Что менялось в Surnia от версии к версии.">
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; color: #1c1c1e; background: #fff; }
+  h1 { font-size: 2rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.5rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+  .tagline, .muted { color: #6b6b70; margin-top: 0; }
+  nav { font-size: .95rem; margin-bottom: 2rem; }
+  nav a { margin-right: 1rem; }
+  .cta { display: inline-block; background: #0a58ca; color: #fff; text-decoration: none;
+         padding: .7rem 1.4rem; border-radius: 8px; font-weight: 600; margin-top: .5rem; }
+  .cta:hover { background: #0a4fb4; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #e3e3e6; vertical-align: top; }
+  th { font-weight: 600; }
+  ul { padding-left: 1.2rem; } li { margin: .35rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em;
+         background: #f2f2f4; padding: .1rem .35rem; border-radius: 4px; }
+  pre { background: #f2f2f4; padding: .8rem 1rem; border-radius: 8px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  a { color: #0a58ca; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #e3e3e6; color: #6b6b70; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8ea; background: #131315; }
+    .tagline, .muted, footer { color: #9a9aa0; }
+    a { color: #6ea8fe; }
+    .cta { background: #2d6ee0; } .cta:hover { background: #3d7cf0; }
+    code, pre { background: #232327; }
+    th, td { border-color: #2c2c30; } footer { border-top-color: #2c2c30; }
+  }
+  @media (max-width: 600px) { table { display: block; overflow-x: auto; } }
+</style>
+</head>
+<body>
+<nav><a href="index.html">Surnia</a><a href="changelog.html">История версий</a><a href="privacy.html">Конфиденциальность</a><a href="eula.html">Лицензия</a><a href="support.html">Поддержка</a></nav>
+<h1>История версий</h1>
+<p class="tagline">Текущая версия - 1.22.4. Скачать: <a href="https://github.com/Wolk88/surnia-site/releases/latest">последний выпуск</a>.</p>
+<h2>1.22.4 (Python-версия 0.22.4) - 19.08.2026</h2>
+<p>Срочное исправление дистрибутива:</p>
+<ul><li>На Mac без Homebrew расшифровка не запускалась: встроенный Python не находил стандартную библиотеку (теперь хелпер стартует с PYTHONHOME внутри бандла), а из пакета numpy при сборке был вырезан рабочий модуль <code>numpy.testing</code>, без которого не импортируется scipy и mlx_whisper. Проверка импорта при сборке теперь идёт в том же окружении, что и у пользователя, и не подхватывает Homebrew с машины разработчика.</li><li>Автозапуск при входе: переключатель в настройках снова реально включает и выключает запись в системе (в нативной версии он только писал конфиг).</li><li>«Собрать и отправить логи» открывает черновик в почтовом клиенте по умолчанию, без AppleScript; перезапуск приложения - через LaunchServices.</li></ul>
+<p>Подготовка редакции для Mac App Store (пока не опубликована):</p>
+<ul><li>Приложение умеет жить в песочнице: папки встреч, словарей и записей запоминаются security-scoped закладками, автозапуск через SMAppService, хелперы наследуют контейнер. Сборка <code>APPSTORE=1</code>, подпись <code>SIGN_MODE=sandbox-dev|appstore</code> в native/sign_native_app.sh.</li></ul>
+<h2>1.22.3 (Python-версия 0.22.3) - 19.08.2026</h2>
+<p>Проверка дистрибутива на персональные данные перед раздачей:</p>
+<ul><li>В истории версий, комментариях кода и примерах тестов реальные имена коллег заменены на вымышленные.</li><li>Теги заметок по умолчанию - только «встреча»: прежние дополнительные теги остаются у тех, у кого уже настроены, новым пользователям не навязываются.</li><li>Эталонная запись самопроверки - синтетический голос (проверено).</li></ul>
+<h2>1.22.2 - 19.08.2026</h2>
+<p>Доводка по замечаниям первых двух дней на живых встречах.</p>
+<p>Чистота речи:</p>
+<ul><li>Метрики речи у иконки во время встречи (паразиты | мат | темп) - перенесены; тумблеры действуют в моменте, даже посреди встречи.</li><li>Отчёт по итогам: мат считается (раньше всегда 0), фокус-слово выбирается из словаря паразитов, без анализа лишние контролы серые, Small нельзя удалить под включёнными метриками.</li></ul>
+<p>Голоса:</p>
+<ul><li>Автосклейка выключена: каждый голос каждой встречи - своя метка, склейка только руками в окне похожих (галочки, ▶/⏸, счётчик «Прикрепится…»).</li><li>Окно «Метки голоса…» у человека: прослушать и открепить по одной.</li><li>Прослушивание играет все фрагменты подряд, повторное нажатие останавливает.</li></ul>
+<p>Запись и конвейер:</p>
+<ul><li>Запись работала без микрофона и с пустой системной дорожкой - починено (Float32, ресемпл, поток miccap).</li><li>Пороги Whisper против зацикливаний («16 16 16…», «что то») возвращены.</li><li>Имя встречи спрашивается на старте и в конце, Cmd+V в поле работает.</li><li>Хелперы записи гаснут вместе с приложением.</li></ul>
+<p>Интерфейс:</p>
+<ul><li>Анимация совы (моргание, спиннер), окна поднимаются поверх других, документы из «О программе» открываются, логи собираются и отправляются.</li><li>Прогресс скачивания моделей честный.</li></ul>
+<h2>1.22.1 - 18.08.2026</h2>
+<p>Приложение переписано на Swift целиком. Работает так же, как 0.21.x, но запускается быстрее, занимает меньше памяти между встречами и не зависит от Python в системе: внутри свой рантайм с моделями, как и раньше. Данные, настройки, библиотека голосов и журналы - те же, ничего переносить не надо. Ставится вместо старой версии (в Applications можно держать и ту, и другую).</p>
+<p>Что изменилось заметно:</p>
+<ul><li>Модели распознавания и саммари живут в отдельном процессе и выгружаются сразу после работы - на ноутбуках с 16 ГБ памяти это главное. Раздел «Память» в настройках убран за ненадобностью.</li><li>Скачивание моделей показывает честный прогресс в мегабайтах.</li><li>Полная проверка в «Самодиагностике» идёт как обычная встреча: сова показывает обработку.</li><li>«Собрать логи» и «Собрать и отправить» собирают архив без личных данных и открывают письмо в Почте.</li><li>Название встречи спрашивается на старте и в конце, попадает в имя заметки.</li><li>Заголовок «Полная расшифровка» и папки встреч следуют языку интерфейса (старые заметки не трогаются).</li></ul>
+<p>Что осталось как было: автостарт по камере, запись двух каналов, расшифровка, саммари, диаризация и библиотека голосов, чистота речи по итогам встречи, глоссарий и словарь Whisper из vault.</p>
+<p>Пока не перенесено: метрики речи у иконки во время встречи.</p>
+<footer>Surnia - локальная автозапись встреч для Mac. Вопросы: <a href="mailto:surnia.app@mail.ru">surnia.app@mail.ru</a>.</footer>
+</body>
+</html>

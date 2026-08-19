@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surnia - политика конфиденциальности</title>
+<meta name="description" content="Какие данные обрабатывает Surnia, где они хранятся и почему не покидают ваш Mac.">
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; color: #1c1c1e; background: #fff; }
+  h1 { font-size: 2rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.5rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+  .tagline, .muted { color: #6b6b70; margin-top: 0; }
+  nav { font-size: .95rem; margin-bottom: 2rem; }
+  nav a { margin-right: 1rem; }
+  .cta { display: inline-block; background: #0a58ca; color: #fff; text-decoration: none;
+         padding: .7rem 1.4rem; border-radius: 8px; font-weight: 600; margin-top: .5rem; }
+  .cta:hover { background: #0a4fb4; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #e3e3e6; vertical-align: top; }
+  th { font-weight: 600; }
+  ul { padding-left: 1.2rem; } li { margin: .35rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em;
+         background: #f2f2f4; padding: .1rem .35rem; border-radius: 4px; }
+  pre { background: #f2f2f4; padding: .8rem 1rem; border-radius: 8px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  a { color: #0a58ca; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #e3e3e6; color: #6b6b70; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8ea; background: #131315; }
+    .tagline, .muted, footer { color: #9a9aa0; }
+    a { color: #6ea8fe; }
+    .cta { background: #2d6ee0; } .cta:hover { background: #3d7cf0; }
+    code, pre { background: #232327; }
+    th, td { border-color: #2c2c30; } footer { border-top-color: #2c2c30; }
+  }
+  @media (max-width: 600px) { table { display: block; overflow-x: auto; } }
+</style>
+</head>
+<body>
+<nav><a href="index.html">Surnia</a><a href="changelog.html">История версий</a><a href="privacy.html">Конфиденциальность</a><a href="eula.html">Лицензия</a><a href="support.html">Поддержка</a></nav>
+<h1>Политика конфиденциальности Surnia</h1>
+<p>Версия от 09.08.2026</p>
+<p>Коротко: всё, что приложение создаёт, остаётся на вашем компьютере. Приложение ничего о вас не передаёт разработчику - единственное исключение описано в разделе «Диагностика», и оно срабатывает только по вашей команде.</p>
+<h2>Какие данные обрабатываются и где</h2>
+<table><tr><th>Данные</th><th>Где хранятся</th><th>Уходят ли с устройства</th></tr><tr><td>Аудиозаписи встреч</td><td>папка записей, которую вы выбрали</td><td>нет</td></tr><tr><td>Расшифровки и заметки</td><td>ваш каталог заметок (Obsidian или другой)</td><td>нет</td></tr><tr><td>Слепки голоса и короткие фрагменты записи</td><td><code>~/Library/Application Support/Surnia</code></td><td>нет</td></tr><tr><td>Настройки, история метрик речи и журнал работы</td><td><code>~/Library/Application Support/Surnia</code></td><td>нет</td></tr></table>
+<p>Распознавание речи и подготовка краткого изложения выполняются моделями, работающими на вашем устройстве. Приложение не отправляет содержимое встреч на сторонние серверы и не использует облачные сервисы распознавания.</p>
+<p>Учётной записи, регистрации, аналитики, рекламных идентификаторов и автоматических отчётов об ошибках в приложении нет.</p>
+<h2>Сетевые обращения</h2>
+<p>Приложение выходит в интернет только за моделями: модели распознавания и краткого изложения скачиваются при первом запуске и при смене модели в настройках, модель разделения голосов - при первом использовании этой функции. Все модели скачиваются с Hugging Face (huggingface.co); передаётся только запрос на скачивание файлов, содержимое ваших встреч не отправляется. Как при любом обращении в интернет, серверу Hugging Face виден ваш IP-адрес. Когда модели скачаны, приложение работает без интернета.</p>
+<h2>Слепки голоса</h2>
+<p>Чтобы подписывать собеседников именами, приложение хранит слепок голоса - математическое представление (набор чисел) - и короткий фрагмент записи для прослушивания. Поскольку слепки используются для опознания людей по голосу, такие данные являются биометрическими персональными данными (в Российской Федерации - статья 11 закона № 152-ФЗ). Их обработка, как правило, требует письменного согласия человека, чей голос опознаётся; получить его - ваша обязанность как лица, решившего вести запись.</p>
+<p>Слепки хранятся только на вашем компьютере и никуда не передаются. Удалить их можно в окне «Голоса» или скриптом <code>uninstall.sh</code>; сроки автоматического удаления - в разделе «Сроки хранения».</p>
+<h2>Сроки хранения</h2>
+<p>Сроки задаёте вы в настройках: обработанные аудиозаписи удаляются через заданное число дней (по умолчанию 90), неопознанные слепки голоса - тоже (по умолчанию 180). Слепки, прикреплённые к людям, хранятся, пока вы не удалите их в окне «Голоса». Расшифровки и заметки хранятся бессрочно - это ваши файлы, приложение их не удаляет.</p>
+<h2>Диагностика</h2>
+<p>Приложение ведёт журнал работы на вашем компьютере. Журнал содержит технические сведения о работе приложения; при сборке диагностического архива имя пользователя в путях и названия заметок (в них - темы встреч) маскируются автоматически.</p>
+<p>Архив отправляется разработчику только если вы сами нажмёте «Собрать и отправить логи»: письмо формируется в вашей почтовой программе, вы видите вложение и можете просмотреть его перед отправкой. Автоматической отправки нет.</p>
+<h2>Удаление данных</h2>
+<p>Записи, заметки и библиотека голосов - обычные файлы. Удалить данные можно тремя способами: кнопкой «Удалить все данные приложения» в настройках (вкладка «Основные»), скриптом <code>uninstall.sh</code>, который идёт вместе с приложением, или вручную. Обратите внимание: перемещение приложения в корзину само по себе не удаляет его данные - сначала сотрите их одним из этих способов. Заметки и расшифровки встреч не удаляет ни один из них - это ваши файлы.</p>
+<h2>Контакт</h2>
+<p>Разработчик приложения - Михаил Волковников. Вопросы о конфиденциальности: surnia.app@mail.ru.</p>
+<h2>Данные ваших собеседников</h2>
+<p>Приложение записывает голоса других людей по вашему решению. По закону за эти данные отвечаете вы: именно вы определяете, зачем они записываются и как используются (на языке закона - цели и способы обработки). Ваши обязанности при записи описаны в разделе 3 лицензионного соглашения.</p>
+<h2 id="english">Privacy policy (English summary)</h2>
+<p>Surnia processes everything on your Mac. Meeting audio, transcripts and notes are stored
+in folders you choose; voice embeddings and settings live in the app's own data folder.
+Nothing is sent to the developer or to third parties, there is no account, no analytics and
+no crash reporting. The only network activity is downloading speech and language models from
+Hugging Face (huggingface.co) when you first set up the app or change a model; your meeting
+content is never uploaded. Voice embeddings used to label speakers are biometric data:
+obtaining consent of the people you record is your responsibility. Retention periods for
+recordings and unassigned voices are configurable; notes are your files and are never
+deleted by the app. If you choose "Collect and send logs", the app prepares an e-mail with a
+diagnostic archive that contains no meeting content - you review it and decide whether to
+send it. Contact: <a href="mailto:surnia.app@mail.ru">surnia.app@mail.ru</a>.</p>
+
+<footer>Surnia - локальная автозапись встреч для Mac. Вопросы: <a href="mailto:surnia.app@mail.ru">surnia.app@mail.ru</a>.</footer>
+</body>
+</html>

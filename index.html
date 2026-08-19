@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surnia - автозапись встреч для Mac</title>
+<meta name="description" content="Surnia пишет встречи по включённой камере, расшифровывает речь и готовит заметку с изложением - целиком на вашем Mac, без облака.">
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; color: #1c1c1e; background: #fff; }
+  h1 { font-size: 2rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.5rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+  .tagline, .muted { color: #6b6b70; margin-top: 0; }
+  nav { font-size: .95rem; margin-bottom: 2rem; }
+  nav a { margin-right: 1rem; }
+  .cta { display: inline-block; background: #0a58ca; color: #fff; text-decoration: none;
+         padding: .7rem 1.4rem; border-radius: 8px; font-weight: 600; margin-top: .5rem; }
+  .cta:hover { background: #0a4fb4; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #e3e3e6; vertical-align: top; }
+  th { font-weight: 600; }
+  ul { padding-left: 1.2rem; } li { margin: .35rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em;
+         background: #f2f2f4; padding: .1rem .35rem; border-radius: 4px; }
+  pre { background: #f2f2f4; padding: .8rem 1rem; border-radius: 8px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  a { color: #0a58ca; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #e3e3e6; color: #6b6b70; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8ea; background: #131315; }
+    .tagline, .muted, footer { color: #9a9aa0; }
+    a { color: #6ea8fe; }
+    .cta { background: #2d6ee0; } .cta:hover { background: #3d7cf0; }
+    code, pre { background: #232327; }
+    th, td { border-color: #2c2c30; } footer { border-top-color: #2c2c30; }
+  }
+  @media (max-width: 600px) { table { display: block; overflow-x: auto; } }
+</style>
+</head>
+<body>
+<nav><a href="index.html">Surnia</a><a href="changelog.html">История версий</a><a href="privacy.html">Конфиденциальность</a><a href="eula.html">Лицензия</a><a href="support.html">Поддержка</a></nav>
+
+<h1>Surnia</h1>
+<p class="tagline">Сова, которая не спит на встречах: сама замечает начало видеозвонка,
+пишет звук и после встречи кладёт готовую заметку - тема, ключевые моменты, задачи и
+полная расшифровка. Всё на вашем Mac, без облака.</p>
+
+<p><a class="cta" href="https://github.com/Wolk88/surnia-site/releases/latest">Скачать Surnia 1.22.4</a></p>
+<p class="muted">Бесплатно. Mac с Apple Silicon, macOS 14.4 или новее. Образ подписан и
+нотаризован Apple. <a href="changelog.html">Что нового</a>.</p>
+
+<h2>Что умеет</h2>
+<table>
+  <tr><th>Начало встречи</th><td>По включённой камере - или вручную из меню в строке меню.
+      Камера не снимается: приложение только видит, что она включилась.</td></tr>
+  <tr><th>Запись</th><td>Ваш микрофон и голоса собеседников - двумя дорожками,
+      чтобы расшифровка различала «я» и «собеседники».</td></tr>
+  <tr><th>Расшифровка</th><td>Локальная модель распознавания речи; ваш словарь терминов и
+      глоссарий аббревиатур подправляют результат.</td></tr>
+  <tr><th>Заметка</th><td>Краткое изложение, задачи, теги и полная расшифровка в файле
+      Markdown - удобно для Obsidian, но Obsidian не обязателен.</td></tr>
+  <tr><th>Голоса</th><td>По желанию - подписи собеседников именами по голосу.
+      Слепки голосов хранятся только у вас.</td></tr>
+  <tr><th>Чистота речи</th><td>По желанию - слова-паразиты, темп, фокус-слово недели
+      и метрики прямо у иконки во время встречи.</td></tr>
+</table>
+
+<h2>Приватность</h2>
+<p>Распознавание и краткое изложение делают модели на вашем устройстве. Приложение не
+передаёт записи и заметки ни разработчику, ни третьим лицам, не требует учётной записи и
+не собирает аналитику. Интернет нужен один раз - скачать модели с Hugging Face.
+Подробно - в <a href="privacy.html">политике конфиденциальности</a>.</p>
+
+<h2>English</h2>
+<p>Surnia is a menu-bar app for Apple Silicon Macs that records your meetings when the
+camera turns on, transcribes them with on-device models and writes a Markdown note with a
+summary, action items and the full transcript. No cloud, no account, no analytics; the only
+network use is downloading models from Hugging Face. Russian and English interface.
+See the <a href="privacy.html#english">privacy policy</a>.</p>
+
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://github.com/Wolk88/surnia-site/releases/latest">Скачать</a> - образ dmg и контрольная сумма.</li>
+  <li><a href="changelog.html">История версий</a></li>
+  <li><a href="privacy.html">Политика конфиденциальности</a> и <a href="eula.html">лицензионное соглашение</a></li>
+  <li><a href="support.html">Поддержка</a></li>
+</ul>
+
+<footer>Surnia - локальная автозапись встреч для Mac. Вопросы: <a href="mailto:surnia.app@mail.ru">surnia.app@mail.ru</a>.</footer>
+</body>
+</html>

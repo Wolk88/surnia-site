@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Surnia - автозапись встреч для Mac</title>
-<meta name="description" content="Surnia пишет встречи по включённой камере, расшифровывает речь и готовит заметку с изложением - целиком на вашем Mac, без облака.">
+<meta name="description" content="Surnia пишет встречи по включённой камере, расшифровывает речь и готовит заметку с изложением - по умолчанию целиком на вашем Mac.">
 <style>
   :root { color-scheme: light dark; }
   body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
@@ -45,7 +45,7 @@
 <h1>Surnia</h1>
 <p class="tagline">Сова, которая не спит на встречах: сама замечает начало видеозвонка,
 пишет звук и после встречи кладёт готовую заметку - тема, ключевые моменты, задачи и
-полная расшифровка. Всё на вашем Mac, без облака.</p>
+полная расшифровка. По умолчанию всё на вашем Mac; пересказ по желанию можно отдать облачной модели.</p>
 
 <p><a class="cta" href="https://apps.apple.com/ru/app/surnia/id6803187278">Скачать в Mac App Store</a></p>
 <p class="muted">Бесплатно. Mac с Apple Silicon, macOS 14.4 или новее.
@@ -61,23 +61,31 @@
       глоссарий аббревиатур подправляют результат.</td></tr>
   <tr><th>Заметка</th><td>Краткое изложение, задачи, теги и полная расшифровка в файле
       Markdown - удобно для Obsidian, но Obsidian не обязателен.</td></tr>
-  <tr><th>Голоса</th><td>По желанию - подписи собеседников именами по голосу. Слепки голосов хранятся только у вас.</td></tr>
+  <tr><th>Экран</th><td>По желанию - снимки экрана во время встречи: что показывали на
+      слайдах, попадает в заметку. Одинаковые кадры не копятся.</td></tr>
+  <tr><th>Живой разговор</th><td>Встреча за столом без звонка: пишется только микрофон,
+      голоса разделяются по говорящим.</td></tr>
+  <tr><th>Запись из файла</th><td>Готовая запись (Zoom, Teams, диктофон - m4a, mp3, wav,
+      mp4) проходит тот же разбор и становится заметкой.</td></tr>
+  <tr><th>Голоса</th><td>По желанию - подписи собеседников именами по голосу и пересверка уже подписанных заметок. Слепки голосов хранятся только у вас.</td></tr>
   <tr><th>Чистота речи</th><td>По желанию - слова-паразиты, темп, фокус-слово недели
       и метрики прямо у иконки во время встречи.</td></tr>
+  <tr><th>Надёжность</th><td>Выход из приложения, сбой или выключение Mac посреди встречи
+      не теряют запись: она соберётся и обработается при следующем запуске.</td></tr>
 </table>
 
 <h2>Приватность</h2>
-<p>Распознавание и краткое изложение делают модели на вашем устройстве. Приложение не
-передаёт записи и заметки ни разработчику, ни третьим лицам, не требует учётной записи и
-не собирает аналитику. Интернет нужен один раз - скачать модели с Hugging Face.
+<p>Распознавание делает модель на вашем устройстве, краткое изложение - тоже, пока вы
+не включили пересказ через облако со своим ключом. Разработчику приложение записи и заметки не
+передаёт, не требует учётной записи и не собирает аналитику. Интернет нужен, чтобы скачать
+модели с Hugging Face, и для пересказа через облако, если он включён.
 Подробно - в <a href="privacy.html">политике конфиденциальности</a>.</p>
 
 <h2>English</h2>
 <p>Surnia is a menu-bar app for Apple Silicon Macs that records your meetings when the
 camera turns on, transcribes them with on-device models and writes a Markdown note with a
-summary, action items and the full transcript. Optional: speaker names by voice and speech metrics.
-No cloud, no account, no analytics; the only
-network use is downloading models from Hugging Face. Russian and English interface.
+summary, action items and the full transcript. Optional: screen snapshots of shared slides, in-person conversations, importing existing recordings and speaker names by voice and speech metrics.
+On-device by default; summaries can optionally go to a cloud model with your own API key. No account, no analytics. Russian and English interface.
 See the <a href="privacy.html#english">privacy policy</a>.</p>
 
 <h2>Ссылки</h2>
